@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>abdouxprese</title>
+<style>
+#ppa{
+
+}
+*{
+
+margin: 0;
+padding: 0;
+border-radius: 10px;
+}
+body{
+ 
+  margin: 0;
+    padding: 0;
+background-image: linear-gradient(to left,rgb(121,205,98),rgb(43,130,19));
+ ; 
+}
+.cr{
+margin: auto;
+text-align: center;
+color: white;
+margin: 4px 0;
+width: 100%;
+}
+.dd{
+height: 40px;
+width: 300px;
+background: rgb(163,224,164);
+border: 2px red inset;
+}
+.dd img{
+width: 42px;
+margin-top: 0px;
+margin-left: 0px;
+}
+.kk{
+height: 40px;
+width: 200px;
+
+border: 1px red inset;
+margin: auto;
+text-align: center;
+}
+.ab{
+
+border: 2px red inset;
+}
+input{
+width: 90%;
+height: 100px
+width: 200px;
+background:rgb(246,249,168) ;
+border: 2px red inset;
+margin: 4px 0;
+color: blue;
+}
+input:focus{
+background: rgb(243,247,124);
+padding: 4px;
+}
+.ll{
+height: 100px
+width: 200px;
+background: rgb(225,182,34);
+border: 5px red inset;
+}
+#total{
+background: rgb(241,172,172) ;
+border: 3px red inset;
+background: rgb(225,182,34);
+}
+#total:before{
+content: "الثمن الإجمالي:";
+}
+button{
+width: 100%;
+color: black;
+transition: 0.5s;
+}
+button:active{
+background: white;
+letter-spacing: 1px;
+}
+
+.hhh{
+  background: rgb(16,214,35) ;
+  border: 2px green inset;
+  font-size: 10px;
+  color: black;
+
+}
+.hhhh{
+  
+  border: 2px red inset;
+  font-size: 10px;
+  color: white;
+  
+}
+
+</style>
+<body>
+<div class="cr">
+<div class="dd">
+<img  src="Hhhh1.png" alt="error"class"aa">
+</div>
+  <div class="hid">
+<h2 class="kk">حساب سعر المنتجات</h2>
+<h4 class="ab">لحساب التكلفة الإجمالية للمشتريات ZADMI  موقع</h4>
+</div>
+<div class="bad">
+<input onkeyup="w()" id="1" placeholder="إسم المشتري" class="">
+<input onkeyup="w()"  placeholder="إسم المنتوج"  id="2"class="">
+<input  onkeyup="w()"  id="3"placeholder="نوع المنتوج"></input>
+<input onkeyup="w()"  id="4" type="number" placeholder="سعر المنتوج" class="">
+<input id="5"  onkeyup="w()"   placeholder="الوزن " type="Number"class=""> 
+<input  onkeyup="w()"     id="6"  placeholder="عدد الصناديق"  type="Number"class="">
+<input id="7" onkeyup="w()"    placeholder="وزن الصندوق"  type="Number"class="">
+<input onkeyup="w()" id="8" placeholder="أخرى"type="Number"class="">
+<small id="total"></small>
+<button id="ta3" onclick="p()"  id="crt" type="submit" class="ll">إنشاء</button>
+</div>
+<div class="results">
+<div class="sherch">
+<input onkeyup="ba(this.value)"placeholder="إبحث عن منتوج"class="">
+<button class="ll">إبحث</button>
+</div>
+<button  onclick="kol()"id="delta" class="ll">احذف الكل</button>
+<table>
+ <tr>
+ <th class="hhh">رقم المنتوج</th>
+ <th  class="hhh" >إسم المشتري</th>
+ <th class="hhh">إسم المنتوج</th>
+ <th class="hhh" >نوع المنتوج</th>
+  <th class="hhh" >سعر المنتوج</th>
+ <th class="hhh" >الوزن</th>
+ <th class="hhh" >عدد الصناديق</th>
+  <th class="hhh" >وزن الصندوق</th>
+ <th class="hhh">أخرى</th>
+ <th class="hhh">المجموع</th>
+ <th class="hhh">حذف</th>
+ <th class="hhh">تعديل</th>
+ </tr>
+ <embed  name="plp"  src= "au.mp3"  loop = "false"  hidden="true"   autostart="true" >
+<tbody class="hhh" id="tables">
+ 
+    
+</tbody>
+</table>
+</div>
+</div>
+<script>
+let mod = "ce"
+let ii;
+if(localStorage.mmb != null){
+  art = JSON.parse(localStorage.mmb)
+gig()
+}
+else{
+
+  art = []
+}
+
+ 
+  let aa= document.getElementById("1");
+let ab = document.getElementById("2");
+let ac = document.getElementById("3");
+let ad= document.getElementById("4");
+let ae= document.getElementById("5");
+let af= document.getElementById("5");
+let ai= document.getElementById("8");
+let aj= document.getElementById("6");
+let ah= document.getElementById("7");
+
+let cre = document.getElementById("ta3");
+let table = document.getElementById("table");
+  natiga = document.getElementById("total");
+  
+function w(){
+  natiga.innerHTML = +ad.value*(+ae.value-(+aj.value *+ah.value))+  +ai.value
+}
+function p(){
+  let ww={
+      ism_moshtari:aa.value,
+      ism_mantog:ab.value,
+      naw3_mantog:ac.value,
+      si3r:ad.value,
+      wazn:ae.value,
+      adad_sanadik:aj.value,
+      wazn_zandok:ah.value,
+      okra:ai.value,
+      magmo3:natiga.innerHTML,
+    }
+    if(mod === "ce"){
+        art.push(ww)
+    }else{
+      art[ii] = ww
+mod = "ce"
+cre.innerHTML = "إنشاء"
+cre.style.background = "rgb(225,182,34)"
+    }
+
+  
+    
+    
+   aa.value = ""
+    ab.value = ""
+    ac.value = ""
+    ad.value = ""
+    ae.value = ""
+    af.value = ""
+    aj.value = ""
+    ah.value = ""
+    ai.value = ""
+    natiga.innerHTML = ""
+       gig()
+}
+function gig(){
+   let tab ="";
+   for(let i = 0 ;i <art.length; i++){
+     
+  tab +=`
+<tr>
+<td class="hhhh">${i +1}</td>
+<td class="hhhh" >${art[i].ism_moshtari}</td>
+<td class="hhhh" >${art[i].ism_mantog}</td>
+<td class="hhhh" >${art[i].naw3_mantog}</td>
+<td class="hhhh" >${art[i].si3r}</td>
+<td class="hhhh" >${art[i].wazn}</td>
+<td class="hhhh" >${art[i].adad_sanadik}</td>
+<td class="hhhh" >${art[i].wazn_zandok}</td>
+<td class="hhhh" >${art[i].okra}</td>
+<td  class="hhhh" >${art[i].magmo3}</td>
+<td><button class="ll" onclick="ta(${i})" >تعديل</button></td>
+<td><button onclick="h(${i})" class="ll">احذف</button></td>
+</tr>`
+ii = i
+   }
+   
+  document.getElementById("tables").innerHTML = tab
+localStorage.setItem('mmb', JSON.stringify(art))
+}
+function kol(){
+  
+  art.splice(0)
+  localStorage.clear()
+  gig()
+}
+function h(i){
+  art.splice(i,1)
+  gig()
+}
+function ta(i){
+  aa.value = art[i].ism_moshtari
+  ab.value = art[i].ism_mantog
+  ac.value = art[i].naw3_mantog
+  ad.value = art[i].si3r
+ae.value = art[i].wazn
+aj.value = art[i].adad_sanadik
+ah.value = art[i].wazn_zandok
+ai.value = art[i].okra
+w()
+  cre.innerHTML = "تعديل"
+  cre.style.background = "yellow "
+  
+  mod = "up"
+  scroll ({top:0,
+    behavior:"smooth"
+  })
+}
+function ba(value){
+  let tab = "";
+for(let i = 0 ;i <art.length; i++){
+  if(
+  art[i].ism_mantog.includes(value)
+){
+  
+  tab +=`
+<tr>
+<td class="hhhh">${i +1}</td>
+<td class="hhhh" >${art[i].ism_moshtari}</td>
+<td class="hhhh" >${art[i].ism_mantog}</td>
+<td class="hhhh" >${art[i].naw3_mantog}</td>
+<td class="hhhh" >${art[i].si3r}</td>
+<td class="hhhh" >${art[i].wazn}</td>
+<td class="hhhh" >${art[i].adad_sanadik}</td>
+<td class="hhhh" >${art[i].wazn_zandok}</td>
+<td class="hhhh" >${art[i].okra}</td>
+<td  class="hhhh" >${art[i].magmo3}</td>
+<td><button class="ll" onclick="ta(${i})" >تعديل</button></td>
+<td><button onclick="h(${i})" class="ll">احذف</button></td>
+</tr>`
+
+   
+  document.getElementById("tables").innerHTML = tab
+}else{
+ document.getElementById("tables").innerHTML = ""
+}
+  
+}}
+</script>
+</body>
+</html>
